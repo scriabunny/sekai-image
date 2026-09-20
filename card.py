@@ -76,7 +76,7 @@ def get_sheet():
     reader = csv.DictReader(io.StringIO(response.text))
 
     return [
-        (row["cardRarityType"], row["attr"], row["assetbundleName"])
+        (row["cardRarityType"], row["attr"].lower(), row["assetbundleName"])
         for row in reader
     ]
 
